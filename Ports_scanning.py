@@ -32,8 +32,8 @@ try:
     ip = socket.gethostbyname(target)
     print(Fore.MAGENTA + "IP address:", ip)
 
-    # scan ports from 1 to 1000.
-    for port in range(1, 1000):
+    # scan ports from 1 to 65535 
+    for port in range(1, 65535):
         threading.Thread(target=scan_port, args=(port,)).start()
 # If server is unreachable these errors will be displayed.
 except socket.error:
