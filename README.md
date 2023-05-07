@@ -1,2 +1,4 @@
 # Snoop
-code dumb for bootcon project
+code dump for bootcon project
+
+
