@@ -22,7 +22,7 @@ def get_robots_txt(url):
     return data.read(), path + 'robots.txt'
     print(get_robots_txt('url'))
 
-# Find all links to sitemap.xml in robots.txt and save to file.
+# Find sitemap.xml in robots.txt and save to file.
 def save_sitemap_links(url):
     robots_txt, robots_url = get_robots_txt(url)
     print(Fore.GREEN + 'Robots.txt content: ' + robots_url)
