@@ -36,5 +36,3 @@ def save_sitemap_links(url):
         print(Fore.RED + 'No sitemap links found in robots.txt')
 
 save_sitemap_links(url)
-
-
