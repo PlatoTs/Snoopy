@@ -5,8 +5,8 @@ import colorama
 from colorama import Fore
 colorama.init() 
 
-ascii_banner = pyfiglet.figlet_format("Crawk")
-print(Fore.CYAN + ascii_banner)
+art = pyfiglet.figlet_format("Crawk")
+print(Fore.CYAN + art)
 
 url = input(str("Please enter target URL:"))
 
