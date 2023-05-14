@@ -18,3 +18,7 @@ response = requests.head(url)
 print(Fore.GREEN + f'Status Code: {response.status_code}')   #HTTP CODE 
 for header in response.headers:
     print(Fore.YELLOW + f'{header}: {response.headers[header]}')
+    
+    
+    
+    #official name HyberHeader
