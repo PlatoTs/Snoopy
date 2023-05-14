@@ -7,8 +7,8 @@ from datetime import datetime
 from colorama import Fore
 colorama.init()
 #Art banner
-ascii_banner = pyfiglet.figlet_format("Stalkin-Ports")
-print(ascii_banner)
+art = pyfiglet.figlet_format("Stalkin-Ports")
+print(art)
 
 # Defining a target
 target = input(str("Enter IP address or URL: "))
