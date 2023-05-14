@@ -4,8 +4,8 @@ import colorama
 from colorama import Fore
 colorama.init() 
 
-ascii_banner = pyfiglet.figlet_format("Headers")
-print(Fore.CYAN + ascii_banner)
+art = pyfiglet.figlet_format("Headers")
+print(Fore.CYAN + art)
 print("-" * 50)
 
 url = input("Enter URL: ")
