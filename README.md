@@ -26,3 +26,9 @@ SSL:
 https://docs.python.org/3/library/ssl.html
 https://stackoverflow.com/questions/16903528/how-to-get-response-ssl-certificate-from-requests-in-python
 
+Header:
+https://docs.python-requests.org/en/latest/
+https://docs.python.org/3/library/stdtypes.html#str.startswith
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+https://docs.python-requests.org/en/latest/api/#requests.head
+https://docs.python-requests.org/en/latest/api/#requests.Response.headers
