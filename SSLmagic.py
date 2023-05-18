@@ -14,12 +14,12 @@ print(Fore.CYAN + art)
 print("-" * 50)
 #target
 hostname = input("Enter IP or URL: ")
-#ssl connection 
+#establish ssl connection 
 context = ssl.create_default_context()
 #default port 443 HTTPS and establish encrypted SSL connection
 with socket.create_connection((hostname, 443)) as sock:
     with context.wrap_socket(sock, server_hostname=hostname) as ssock:
-        cert = ssock.getpeercert() # Where certificate is stored // f-strings makes it easier and readable
+        cert = ssock.getpeercert() # Where certificate is stored // f-strings makes it more readable
         if cert and ('subjectAltName' in cert or 'subject' in cert):
             print(Fore.CYAN + f"The certificate is valid for {cert['subjectAltName']}") 
             print(Fore.CYAN + f"Valid from: {cert['notBefore']}")
