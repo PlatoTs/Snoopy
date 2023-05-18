@@ -3,7 +3,7 @@ import sys
 import socket
 import threading
 import colorama
-import os
+import os  #Used for system-related operations
 from datetime import datetime
 from colorama import Fore
 colorama.init()
