@@ -1,6 +1,6 @@
 import pyfiglet
 import urllib.request
-import io
+import io  # Used for handling input/output
 import colorama
 import os
 from colorama import Fore
@@ -15,14 +15,14 @@ if not url.startswith("https"):
 # Uses URL Library to obtain information on URL's with a robots.txt page.
 # Uses IO to format output from request.
 def get_robots_txt(url):
-    if url.endswith('/'):
+    if url.endswith('/'):   #checks url ends with (/) with robots.txt
         path = url
     else:
         path = url + '/'
     req = urllib.request.urlopen(path + "robots.txt", data=None)
     data = io.TextIOWrapper(req, encoding='utf-8')
     return data.read(), path + 'robots.txt'
-    print(get_robots_txt('url'))
+    print(get_robots_txt('url'))     #prints the outcome
 
 # Find sitemap.xml in robots.txt and save to file.
 def save_sitemap_links(url):
