@@ -1,4 +1,4 @@
-# Snoop HELLO PLATO
+# Snoopy
 
 **_This program was developed solely for educational purposes and is not intended to be used for any illegal activities. Any misuse of this program is strictly prohibited and may result in legal consequences._**
 
