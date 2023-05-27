@@ -1,0 +1,67 @@
+#FUTURE CONCEPT IS THE FOLLOWING:
+    #TO MAKE IT USER FRIENDLY AND START TO CATCH USER ERRORS
+    #COMBINE SEARCH FUNCTIONS TO MAKE QUICK AND COMPREHENSIVE TYPE SCANS
+ 
+ import requests
+from urllib.parse import urlparse
+
+def is_valid_ip(ip):
+    # Check if the IP address is valid
+    parts = ip.split('.')
+    if len(parts) != 4:
+        return False
+    for part in parts:
+        if not part.isdigit() or not 0 <= int(part) <= 255:
+            return False
+    return True
+
+def is_valid_url(url):
+    # Check if the URL is valid and live
+    try:
+        parsed_url = urlparse(url)
+        if not parsed_url.netloc:
+            url = "http://" + url
+        response = requests.head(url, timeout=1)
+        return response.ok
+    except (requests.exceptions.RequestException, ValueError):
+        return False
+
+def quick_scan(target):
+    # Perform quick scan logic
+    print("Performing quick scan for", target)
+    # Add your quick scan code here
+
+def comprehensive_scan(target):
+    # Perform comprehensive scan logic
+    print("Performing comprehensive scan for", target)
+    # Add your comprehensive scan code here
+
+def main():
+    while True:
+        target = input("Enter an IP or URL: ")
+
+        if is_valid_url(target) or is_valid_ip(target):
+            break
+        else:
+            print("Enter a valid IP or URL.")
+
+    print("Target is live!")
+    while True:
+        scan_type = input("Enter 'Q' for Quick Scan or 'C' for Comprehensive Scan: ")
+
+        if scan_type.lower() == 'q':
+            quick_scan(target)
+            print(f"Scan is complete for {target}. Details below.")
+            break
+        elif scan_type.lower() == 'c':
+            if is_valid_url(target):
+                comprehensive_scan(target)
+                print(f"Scan is complete for {target}. Details below.")
+                break
+            else:
+                print("Invalid URL.")
+        else:
+            print("Invalid scan type. Please enter 'Q' or 'C'.")
+
+if __name__ == "__main__":
+    main()
